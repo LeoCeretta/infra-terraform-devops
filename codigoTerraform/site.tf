@@ -15,7 +15,7 @@ provider "azurerm" {
 # Create Resource Group 
 resource "azurerm_resource_group" "rg" {
   location = "westeurope"
-  name     = "rg-auladevops-002"
+  name     = "rg-projectdevops-001"
   tags = merge(var.tags, {
     "workspace" = "${terraform.workspace}"
     }
@@ -23,7 +23,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "site" {
-  name                      = "staccdevopsrg21605"
+  name                      = "staccdevopsprojct01"
   resource_group_name       = azurerm_resource_group.rg.name
   location                  = azurerm_resource_group.rg.location
   account_kind              = "StorageV2"
