@@ -1,6 +1,9 @@
 # Terraform Settings Block
 terraform {
   required_version = ">= 1.0.0"
+  backend "azurerm" {
+    
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -8,10 +11,12 @@ terraform {
     }
   }
 }
+
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
 }
+
 # Create Resource Group 
 resource "azurerm_resource_group" "rg" {
   location = "westeurope"
